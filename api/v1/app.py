@@ -2,7 +2,7 @@
 """ Creates an app instance """
 
 from api.v1.views import app_views
-from flask import Flask, make_response
+from flask import Flask, make_response, jsonify
 from os import getenv
 from models import storage
 
@@ -19,7 +19,7 @@ def teardown_session(exception):
 
 @app.errorhandler(404)
 def not_found(error):
-    return make_response(jsonify({'error': 'Not found'}), 404)
+    return make_response(jsonify({"error": "Not found"}), 404)
 
 
 if __name__ == '__main__':
