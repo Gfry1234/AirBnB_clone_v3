@@ -57,7 +57,7 @@ def create_state():
 
 
 @app_views.route('/states/<state_id>', methods=['PUT'], strict_slashes=False)
-def put_state(state_id):
+def update_state(state_id):
     """ Update existing State object """
     state_inst = storage.get(State, state_id)
     if not state_inst:
