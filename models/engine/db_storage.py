@@ -75,10 +75,10 @@ class DBStorage:
         """call remove() method on the private session attribute"""
         self.__session.remove()
 
-	def get(self, cls, id):
+    def get(self, cls, id):
         """ retrieve one object
         """
-        objs =  self.__session.query(classes[cls])
+        objs = self.__session.query(classes[cls])
         for obj in objs:
             if obj.id == id:
                 return obj
@@ -90,6 +90,5 @@ class DBStorage:
         counter = 0
         for clss in classes:
             if cls is None or cls is classes[clss] or cls is clss:
-                number_of_instance =  len(self.__session.query(classes[clss]).all())
-                counter += number_of_instance
+                counter += len(self.__session.query(classes[clss]).all())
         return counter
