@@ -61,7 +61,7 @@ def create_user():
 
 
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
-def update_city(user_id):
+def update_user(user_id):
     """ Update existing User object """
     user_inst = storage.get(User, user_id)
     if not user_inst:
