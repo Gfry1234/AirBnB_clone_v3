@@ -88,7 +88,7 @@ def update_place(place_id):
         abort(400, "Not a JSON")
 
     for key, val in data.items():
-        if key not in ['id', 'user_id', 'city_at', 'created_at', 'updated_at']:
+        if key not in ['id', 'user_id', 'city_id', 'created_at', 'updated_at']:
             setattr(place_inst, key, val)
 
     storage.save()
