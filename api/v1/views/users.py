@@ -11,10 +11,7 @@ from models.user import User
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def all_users():
     """ retrieves the list of all User objects """
-    users = storage.get(User, state_id)
-    if not users:
-        abort(404)
-
+    users = storage.all(User)
     lst = []
     for obj in users.values():
         lst.append(obj.to_dict())
