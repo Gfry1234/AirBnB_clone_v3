@@ -106,8 +106,8 @@ def places_search():
     if data is None:
         abort(400, "Not a JSON")
 
-    if not data or (not data.get('states') and not data.get('cities') and not 
-		data.get('amenities')):
+    if not data or (not data.get('states') and not data.get('cities') and not
+            data.get('amenities')):
         places = storage.all(Place).values()
         lst = []
         for obj in places:
